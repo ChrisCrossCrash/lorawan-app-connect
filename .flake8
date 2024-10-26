@@ -1,0 +1,14 @@
+[flake8]
+; https://www.flake8rules.com/
+ignore = 
+  ; Line too long
+  E501
+  ; Line break before binary operator
+  W503
+  ; whitespace before ':' (handled by Black)
+  E203
+exclude =
+  ; Virtual environment
+  .venv
+  ; Generated protobuf files
+  *_pb2.py
