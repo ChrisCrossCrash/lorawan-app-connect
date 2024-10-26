@@ -16,30 +16,26 @@
 
 import paho.mqtt.client as mqtt
 import datetime
-import sys
 import json
 import ssl
 import os
 import re
-import tempfile
 import signal
 import time
 import http.client
-import threading, queue
+import threading
+import queue
 import logging
 import logging.handlers
-import socket
 import gzip
 import uuid
 from base64 import b64encode, b64decode
-
 from http.client import (
     BadStatusLine,
     ResponseNotReady,
     CannotSendRequest,
     CannotSendHeader,
 )
-from collections import deque
 
 
 # LoRaWAN Application connecting to 3rd Party Back-end
@@ -108,7 +104,7 @@ app_mqtt_subscribe_clear_topic = "lorawan/%s/%s/clear"
 
 # This application will subscribe to the following topics using appeui and gwuuid
 # The Default App configured appeui will be used for these topics
-# The following topcis can be used to request info from the system:
+# The following topics can be used to request info from the system:
 #  lorawan/<APP-EUI>/<GW-UUID>/api_req
 #  lorawan/<APP-EUI>/<GW-UUID>/lora_req
 #  lorawan/<APP-EUI>/<GW-UUID>/log_req
@@ -117,7 +113,7 @@ app_mqtt_api_request_topic = "lorawan/%s/%s/api_req"
 app_mqtt_lora_request_topic = "lorawan/%s/%s/lora_req"
 app_mqtt_log_request_topic = "lorawan/%s/%s/log_req"
 
-# The following topcis will be used to publish info from the system:
+# The following topics will be used to publish info from the system:
 #  lorawan/<APP-EUI>/<GW-UUID>/api_res
 #  lorawan/<APP-EUI>/<GW-UUID>/lora_res
 #  lorawan/<APP-EUI>/<GW-UUID>/log_res
@@ -160,7 +156,7 @@ app_mqtt_v1_1_subscribe_down_topic = "lorawan/%s/down"
 
 # This application will subscribe to the following topics using appeui and gwuuid
 # The Default App configured appeui will be used for these topics
-# The following topcis can be used to request info from the system:
+# The following topics can be used to request info from the system:
 #  lorawan/<GW-UUID>/api_req
 #  lorawan/<GW-UUID>/lora_req
 #  lorawan/<GW-UUID>/log_req
@@ -169,7 +165,7 @@ app_mqtt_v1_1_api_request_topic = "lorawan/%s/api_req"
 app_mqtt_v1_1_lora_request_topic = "lorawan/%s/lora_req"
 app_mqtt_v1_1_log_request_topic = "lorawan/%s/log_req"
 
-# The following topcis will be used to publish info from the system:
+# The following topics will be used to publish info from the system:
 #  lorawan/<GW-UUID>/api_res
 #  lorawan/<GW-UUID>/lora_res
 #  lorawan/<GW-UUID>/log_res
