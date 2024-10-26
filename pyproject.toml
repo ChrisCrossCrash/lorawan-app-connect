@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "multitech-cloud-connector"
+version = "1.0.0"
+description = "A custom implementation of MultiTech's Cloud Connector app"
+authors = ["Christopher Kumm <chrislkumm@protonmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "~3.8.1"
+paho-mqtt = "^1.6.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "~24.8.0"
+flake8 = "^7.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
