@@ -14,6 +14,13 @@
       "path": "./custom-dictionary.txt"
     }
   ],
+  "ignorePaths": [
+    "**/*.min.js",
+    "**/*.min.css",
+    "**/*.svg",
+    "**/requirements.txt",
+    "**/static/**"
+  ],
   "enableFiletypes": [
     "shellscript",
     "toml"

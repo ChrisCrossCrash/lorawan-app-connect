@@ -6,7 +6,7 @@ This example is using Dot v4.0.0 firmware and mPower 5.3.0 on Conduit
 
 ### Setup the output format
 
-Enable addition of Type, DevAddr, FCnt and Port to HEX output of the data. Use AT+RXO=2 for ascii output instead of hexadeicmal.
+Enable addition of Type, DevAddr, FCnt and Port to HEX output of the data. Use AT+RXO=2 for ascii output instead of hexadecimal.
 
 ```
 AT+RXO=3
@@ -54,7 +54,7 @@ This setting controls the when the Session Setup packet will be queued for each 
 
 This setting controls the time allowed for end-devices to retrieve the Session Setup before the multicast payload will be sent.
 
-# Session Progess
+# Session Progress
 
 ![Multicast Operation Progress](/images/MULTICAST-OPERATION-PROGRESS.png)
 

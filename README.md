@@ -20,12 +20,12 @@ The diagram below shows the messages passed between a LoRaWAN end-device (Dot), 
 
 In the diagram the Class A Rx1 Offset has been increased to five seconds to allow the HTTPS request to be returned in time for a possible Class A downlink to be scheduled to the end-device. The HTTPS connection adds latency that can extend beyond the default one second Rx1 Delay.
 
-1. The Dot sends join reqeust over-the-air
+1. The Dot sends join request over-the-air
 2. The Conduit received the join request and forwards the request to the Lens Join Server
 3. The Lens Join Server authenticates the request and issues a Join Accept message
 4. The Conduit receives the Join Accept message, AppEUI and Session Keys from the Lens Join Server
 5. The Conduit send the Join Accept message over-the-air
-6. The Conduit reqeusts additional App Info from Lens if it is not cached
+6. The Conduit requests additional App Info from Lens if it is not cached
 7. If is a new app the Init Msg is sent to the 3rd Party API
 8. The 3rd Party API returns configuration data in the Init Msg response
 9. A device joined message is sent to the 3rd Party API
@@ -64,9 +64,9 @@ A default application can be configured using mPower 5.3.x firmware.
     eui: application identifier
     options:
       server_cert: server certificate
-      clent_cert: client certicate
+      client_cert: client certificate
       apikey: client private key
-      check_hostname: boolean to verifiy the server hostname
+      check_hostname: boolean to verify the server hostname
 
 ## HTTPS API Protocol
 
@@ -209,7 +209,7 @@ A default application can be configured using mPower 5.3.x firmware.
 
 [Linux Certificate Doc](https://www.golinuxcloud.com/openssl-create-client-server-certificate/)
 
-- server_cert.pem - Public cerificate given out to connecting clients for server authentication
+- server_cert.pem - Public certificate given out to connecting clients for server authentication
 - server_key.pem - Private key used to create client certificates for client authentication
 
 # MQTT Applications
@@ -219,7 +219,7 @@ A default application can be configured using mPower 5.3.x firmware.
     url: mqtts://test.mosquitto.org:8883
     options:
       server_cert: server certificate
-      clent_cert: client certicate
+      client_cert: client certificate
       apikey: client private key
       username: MQTT username
       password: MQTT password
@@ -258,7 +258,7 @@ A default application can be configured using mPower 5.3.x firmware.
     - url: mqtts://test.mosquitto.org:8883
     - options:
       - server_cert: server certificate
-      - clent_cert: client certicate
+      - client_cert: client certificate
       - apikey: client private key
 - https://flespi.com/mqtt-api
   - Supports authentication using username access token for authentication

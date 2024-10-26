@@ -1214,20 +1214,20 @@ def on_mqtt_message(client, userdata, msg):
                             ).decode()
 
                     if backhaul_detect_enabled:
-                        cur_epoc_time = int(time.time())
+                        cur_epoch_time = int(time.time())
                         if deveui in devices:
                             logging.debug(
                                 "check backhaul down time %d %d %d",
-                                cur_epoc_time,
+                                cur_epoch_time,
                                 devices[deveui]["last_seen"],
-                                (cur_epoc_time - devices[deveui]["last_seen"]),
+                                (cur_epoch_time - devices[deveui]["last_seen"]),
                             )
                         if not deveui in devices or (
                             deveui in devices
-                            and (cur_epoc_time - devices[deveui]["last_seen"])
+                            and (cur_epoch_time - devices[deveui]["last_seen"])
                             > backhaul_timeout
                         ):
-                            devices[deveui] = {"last_seen": cur_epoc_time}
+                            devices[deveui] = {"last_seen": cur_epoch_time}
                             app_schedule_downlink(
                                 apps[appeui],
                                 deveui,
